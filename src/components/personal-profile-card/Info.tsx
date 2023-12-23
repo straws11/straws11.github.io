@@ -9,7 +9,9 @@ export default function Info() {
 				alt="Straws"
 			/>
 			<h1 className="text-sky-500 text-4xl text-center p-2 tracking-wider font-bold">
-				<span className="bg-gradient-to-r from-purple-500 to-purple-400 text-transparent bg-clip-text">Dylan Swarts</span>
+				<span className="bg-gradient-to-r from-purple-500 to-purple-400 text-transparent bg-clip-text">
+					Dylan Swarts
+				</span>
 			</h1>
 			{/*<div className="flex text-center justify-center">
 				<hr className="w-1/2" />

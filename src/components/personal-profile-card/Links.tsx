@@ -29,9 +29,7 @@ export default function Links() {
 					<FontAwesomeIcon icon={faYoutube} size="3x" />
 				</a>
 			</div>
-			<footer className="bg-gray-900 text-white text-center py-4">
-				Copyright &copy; {new Date().getFullYear()} Dylan Swarts
-			</footer>
+			
 		</>
 	);
 }

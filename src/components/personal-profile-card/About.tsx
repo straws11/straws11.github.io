@@ -8,7 +8,7 @@ export default function About() {
 			<h2 className="text-blue-200 text-xl text-center p-4 animate-float tracking-widest">
 				About Me
 			</h2>
-			<p className="text-gray-50 sm:text-3sm">
+			<p className="text-gray-50 text-sm sm:text-lg">
 				I'm a {age} year old from South Africa, currently enrolled in a Bachelor
 				of Science in Computer Science, with a focus on Data Science.
 				<br />
@@ -19,7 +19,7 @@ export default function About() {
 				Interests
 			</h2>
 			<h3 className="text-blue-200 text-lg p-4 pl-0 pt-0">Speedcubing</h3>
-			<p className="text-gray-100">
+			<p className="text-gray-100 text-sm sm:text-lg">
 				Outside of university studies, I enjoy competing in Speedcubing
 				competitions, with a focus on solving Rubik's Cubes blindfolded. I first
 				learned how to solve a Rubik's Cube in 2017, and after my first
@@ -31,7 +31,7 @@ export default function About() {
 				rankings I once highly valued.
 			</p>
 			<h3 className="text-blue-200 text-lg p-4 pl-0">Other</h3>
-			<p className="text-gray-100">
+			<p className="text-gray-100 text-sm sm:text-lg">
 				Besides speedcubing, I try to make some time to go hiking in the
 				beautiful mountains we have in the area. Perhaps I'll build a section
 				for sharing some of those images.
