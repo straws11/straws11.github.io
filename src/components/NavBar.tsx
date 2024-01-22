@@ -1,42 +1,45 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
-	return (
-		<nav className="bg-gray-900 p-4">
-			<div className="mx-auto flex justify-between items-center">
-				<div className="flex items-center font-bold text-white text-xs sm:text-lg">
-					{/*<img src="./assets/capybara.png" className="max-w-12 pr-2" />
+    return (
+        <nav className="bg-[#051C2C] p-4 fixed w-full top-0 z-50">
+            <div className="mx-auto flex justify-between items-center">
+                <div className="flex items-center font-bold text-white text-xs sm:text-lg">
+                    {/*<img src="./assets/capybara.png" className="max-w-12 pr-2" />
 					<a target="_blank" href="https://www.wikipedia.com/wiki/Capybara">
 						Capybara
 	</a>*/}
-					<img src="./assets/logo.jpg" className="max-w-12 rounded-full" />
-				</div>
-				<ul className="flex space-x-4 text-xs sm:text-lg">
-					<li>
-						<Link to="/" className="text-white hover:text-gray-300">
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link to="/cubing" className="text-white hover:text-gray-300">
-							Speedcubing
-						</Link>
-					</li>
-					<li>
-						<Link
-							to="/something-else"
-							className="text-white hover:text-gray-300"
-						>
-							Random %
-						</Link>
-					</li>
-					<li>
-						<Link to="/my-youtube" className="text-white hover:text-gray-300">
-							YouTube
-						</Link>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	);
+                    <img
+                        src="./assets/logo.jpg"
+                        className="max-w-12 rounded-full"
+                    />
+                </div>
+                <ul className="flex space-x-4 text-xs sm:text-lg">
+                    <li>
+                        <a
+                            href="#about"
+                            className="text-white hover:text-gray-300"
+                        >
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" className="text-white hover:text-gray-300">
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a className="text-white hover:text-gray-300"></a>
+                    </li>
+                    <li>
+                        <a className="text-white hover:text-gray-300"></a>
+                    </li>
+                    <li>
+                        <a className="text-white hover:text-gray-300"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
 }

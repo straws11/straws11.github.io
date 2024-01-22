@@ -10,6 +10,23 @@
     }
 }
 
+
 .animate-float {
     animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes skills-in {
+    0% {
+        transform: translateX(200px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.animate-skills-in {
+    animation: skills-in 3s ease-in-out;
 }

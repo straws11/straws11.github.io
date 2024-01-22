@@ -1,13 +1,17 @@
-import About from "./personal-profile-card/About";
-import Info from "./personal-profile-card/Info";
+import Intro from "./Intro";
 import Links from "./personal-profile-card/Links";
+import ScrollTransition from "./personal-profile-card/ScrollTransition";
 
 export default function Home() {
-	return (
-		<div className="bg-gray-600 p-5 lg:p-20 lg:w-9/12 lg:m-auto shadow-lg">
-			<Info />
-			<About />
-			<Links />
-		</div>
-	);
+    const components: JSX.Element[] = [<Intro />, <Links />];
+
+    const scrollWrappedComponents = components.map((element, idx) => {
+        return (
+            <ScrollTransition key={idx} title={`${idx}`}>
+                {element}
+            </ScrollTransition>
+        );
+    });
+
+    return <div className="bg-[#4D6995] pt-20">{scrollWrappedComponents}</div>;
 }

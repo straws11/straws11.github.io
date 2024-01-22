@@ -5,27 +5,37 @@ import ProgressPage from "./components/random-progress-bar/ProgressPage";
 import GitHubContent from "./components/GitHubContent";
 import YouTubeContent from "./components/youtube-contents/YouTubeContents";
 import CubingInfo from "./components/speedcubing/CubingInfo";
+import ScrollTransition from "./components/personal-profile-card/ScrollTransition";
+import Links from "./components/personal-profile-card/Links";
+import Intro from "./components/Intro";
 
 function App() {
-	return (
-		<>
-			<BrowserRouter>
-				<div className="app bg-gray-500">
-					<NavBar />
-					{/*<GitHubContent />*/}
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/cubing" element={<CubingInfo />} />
-						<Route path="/something-else" element={<ProgressPage />} />
-						<Route path="/my-youtube" element={<YouTubeContent />} />
-					</Routes>
-				</div>
-			</BrowserRouter>
-			<footer className="bg-gray-900 text-white text-sm text-center py-4">
-				Copyright &copy; {new Date().getFullYear()} Dylan Swarts
-			</footer>
-		</>
-	);
+    const components = [
+        <Intro />,
+		<Links />,
+        <CubingInfo />,
+        <ProgressPage />,
+        <YouTubeContent />,
+    ];
+
+    const wrappedComponents = components.map((element, idx) => (
+        <ScrollTransition key={idx} title={`${idx}`}>
+            {element}
+        </ScrollTransition>
+    ));
+
+    return (
+        <>
+            <div className="app bg-gray-500">
+                <NavBar />
+                {/*<GitHubContent />*/}
+                {wrappedComponents}
+            </div>
+            <footer className="bg-gray-900 text-white text-sm text-center py-4">
+                Copyright &copy; {new Date().getFullYear()} Dylan Swarts
+            </footer>
+        </>
+    );
 }
 
 export default App;
