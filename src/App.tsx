@@ -12,9 +12,10 @@ import Intro from "./components/Intro";
 function App() {
     const components = [
         <Intro />,
-		<Links />,
+        <Links />,
         <CubingInfo />,
         <ProgressPage />,
+        <GitHubContent />,
         <YouTubeContent />,
     ];
 
@@ -28,7 +29,6 @@ function App() {
         <>
             <div className="app bg-gray-500">
                 <NavBar />
-                {/*<GitHubContent />*/}
                 {wrappedComponents}
             </div>
             <footer className="bg-gray-900 text-white text-sm text-center py-4">

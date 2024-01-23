@@ -35,7 +35,7 @@ export default function Intro() {
             <ScrollTransition title="a">
                 <section
                     id="about"
-                    className="grid grid-cols-2 bg-slate-600 h-auto"
+                    className="grid grid-cols-2 bg-slate-600 h-auto pt-20"
                 >
                     <div className="col-span-1">
                         <img
