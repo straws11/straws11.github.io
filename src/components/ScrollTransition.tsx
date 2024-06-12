@@ -1,5 +1,5 @@
 import { useEffect, useState, ReactNode, useRef } from "react";
-import "../../index.css";
+import "../index.css";
 import React from "react";
 
 declare global {

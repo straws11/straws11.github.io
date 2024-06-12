@@ -25,7 +25,7 @@ export default function NavBar() {
                         </a>
                     </li>
                     <li>
-                        <a href="" className="text-white hover:text-gray-300">
+                        <a href="#projects" className="text-white hover:text-gray-300">
                             Projects
                         </a>
                     </li>

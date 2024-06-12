@@ -8,21 +8,27 @@ interface GitHubCardProps {
     description: string;
     url: string;
     language: string;
+    pushedDate: string;
 }
 
 function GitHubCard(props: GitHubCardProps) {
-    const { name, description, url, language } = props;
-
+    const { name, description, url, language, pushedDate } = props;
     return (
-        <a target="_blank" href={url}>
-            <div className="grid grid-cols-[260px,80px] h-[150px] gap-4 w-fit bg-green-400 border border-black rounded-lg p-2 m-4 shadow-lg hover:bg-green-500 transition-transform duration-300 ease-in-out hover:scale-105">
-                <div>
+        <a target="_blank" href={url} className="m-4">
+            <div className="grid text-xs w-[250px] grid-cols-[200px,35px] sm:text-lg sm:w-full sm:grid-cols-[340px,60px] lg:grid-cols-[380px,83.5px] lg:w-[480px] xl: place-content-between bg-green-300 p-2 rounded-md shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
+                <div className="bg-purple-200">
                     <h3 className="font-bold tracking-wider m-1">{name}</h3>
                     <p className="italic">{description}</p>
                     <p>{`Main Language: ${language}`}</p>
+                    <p className="text-right">{`Updated on: ${
+                        pushedDate.split("T")[0]
+                    }`}</p>
                 </div>
-                <div className="flex items-center">
-                    <FontAwesomeIcon icon={faGithub} size="5x" />
+                <div className="flex items-center justify-center bg-orange-500">
+                    <FontAwesomeIcon
+                        icon={faGithub}
+                        size={window.innerWidth > 1024 ? "5x" : "3x"}
+                    />
                 </div>
             </div>
         </a>
@@ -34,6 +40,7 @@ interface RepoEntry {
     description: string | null;
     url: string;
     language: string | null;
+    pushedAt: string;
 }
 
 export default function GitHubContent() {
@@ -71,7 +78,6 @@ export default function GitHubContent() {
         const lastUpdate = localStorage.getItem("lastGitHubRetrieve");
         const lastUpdateTime = lastUpdate ? parseInt(lastUpdate, 10) : null;
         const currentTime = Date.now();
-        console.log(lastUpdate, lastUpdateTime, currentTime);
 
         var repoData: RepoEntry[];
 
@@ -86,7 +92,6 @@ export default function GitHubContent() {
             localStorage.setItem("repoData", JSON.stringify(repoData));
         } else {
             // else retrieve from local storage
-            console.log("sup!");
             const cachedData = localStorage.getItem("repoData");
             repoData = cachedData ? JSON.parse(cachedData) : null;
         }
@@ -95,13 +100,22 @@ export default function GitHubContent() {
 
     useEffect(() => {
         getData().then((repoData: RepoEntry[]) => {
-            const cards = repoData.map((repo, idx) => (
+            // sort by update date
+            const sortedRepoData = repoData
+                .slice()
+                .sort(
+                    (a, b) => Date.parse(b.pushedAt) - Date.parse(a.pushedAt)
+                );
+
+            // map to cards
+            const cards = sortedRepoData.map((repo, idx) => (
                 <GitHubCard
                     key={idx}
                     description={repo.description || ""}
                     language={repo.language || ""}
                     name={repo.name}
                     url={repo.url}
+                    pushedDate={repo.pushedAt}
                 />
             ));
             setGithubCards(cards);
@@ -109,11 +123,15 @@ export default function GitHubContent() {
     }, []);
 
     return (
-        <>
+        <section id="projects">
             <h2 className="text-white text-4xl text-center font-bold">
                 My Projects
             </h2>
-            <div className="grid grid-cols-2">{githubCards}</div>;
-        </>
+            <div className="flex justify-center">
+                <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-x-2 mx-auto">
+                    {githubCards}
+                </div>
+            </div>
+        </section>
     );
 }

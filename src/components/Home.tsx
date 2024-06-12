@@ -1,6 +1,6 @@
-import Intro from "./Intro";
-import Links from "./personal-profile-card/Links";
-import ScrollTransition from "./personal-profile-card/ScrollTransition";
+import Intro from "./Main";
+import Links from "./Links";
+import ScrollTransition from "./ScrollTransition";
 
 export default function Home() {
     const components: JSX.Element[] = [<Intro />, <Links />];
