@@ -25,7 +25,7 @@ const skills: { [key: number]: { skill: string; icon: IconDefinition } } = {
 const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     1: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Used matplotlib and pandas during a Data Science Hackathon in
                 2023. Completed 2 university semester projects, one being an
                 obstacle version of chess, utilising OOP concepts and working
@@ -36,7 +36,7 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     },
     2: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Built a simple Android application for timing and generating
                 statistics for a niche speedcubing event. Experience with Java
                 Socket Programming in a simple Multiplayer Space Invaders Game
@@ -47,11 +47,11 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     },
     3: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Built this personal website using TypeScript, React and
                 TailwindCSS, as well as this{" "}
                 <a
-                    className="text-orange-400 hover:text-red-400"
+                    className="text-[#8ca9bc] hover:text-[#082C37]"
                     href="https://straws11.github.io/word-search"
                 >
                     word search game.
@@ -64,7 +64,7 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     },
     4: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Utilize Git for all university and personal projects.
             </p>
         ),
@@ -72,10 +72,10 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     },
     5: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Hosting all{" "}
                 <a
-                    className="text-orange-400 hover:text-red-400"
+                    className="text-[#8ca9bc] hover:text-[#082C37]"
                     href="#projects"
                 >
                     personal projects
@@ -87,7 +87,7 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     },
     6: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Comfortable using terminal to manage files, install
                 applications, interact with git. Use Tmux and NeoVim daily.
             </p>
@@ -96,11 +96,11 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
     },
     7: {
         text: (
-            <p className="text-3xl">
+            <p className="text-2xl">
                 Learning a lot about websockets, endpoints and postgres using
                 Rust as backend language for{" "}
                 <a
-                    className="text-orange-400 hover:text-red-400"
+                    className="text-[#8ca9bc] hover:text-[#082C37]"
                     href="https://github.com/JBLDKY/starblazers"
                 >
                     Starblazers!
@@ -141,7 +141,7 @@ export default function TechSkills() {
     const components = Object.entries(skills).map(([id, obj]) => {
         const { skill, icon } = obj;
         return (
-            <div key={id} className="flex items-center gap-4 justify-center">
+            <div key={id} className="flex items-center gap-4 justify-center border-[#051C2C]">
                 <button onClick={() => clickSkill(Number(id))}>
                     <FontAwesomeIcon icon={icon} size="3x" />
                     <p>{skill}</p>
@@ -165,8 +165,8 @@ export default function TechSkills() {
 
     return (
         <>
-            <h6 className="text-4xl text-center text-white underline p-4">
-                Skills and Technologies
+            <h6 className="text-4xl text-center text-[#051C2C] underline p-4 pt-28 font-bold">
+                SKILLS AND TECHNOLOGIES
             </h6>
             <div className="grid grid-cols-2 text-sm sm:text-lg lg:text-4xl lg:grid-cols-3 m-4 gap-2 space-y-6">
                 {components}

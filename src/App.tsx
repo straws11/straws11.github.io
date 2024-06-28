@@ -5,7 +5,7 @@ import Main from "./components/Main";
 function App() {
     return (
         <>
-            <div className="app bg-gradient-to-b from-[#36009C] to-[#9765E0]">
+            <div className="app bg-[#50606b]">
                 <NavBar />
                 <Main />
                 <Links />

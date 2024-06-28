@@ -18,15 +18,11 @@ export default function NavBar() {
                 <ul className="flex space-x-4 text-xs sm:text-lg">
                     <li>
                         <a
-                            href="#about"
+                            target="_blank"
+                            href="https://straws11.github.io/word-search"
                             className="text-white hover:text-gray-300"
                         >
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#projects" className="text-white hover:text-gray-300">
-                            Projects
+                            Word Search Project
                         </a>
                     </li>
                     <li>
