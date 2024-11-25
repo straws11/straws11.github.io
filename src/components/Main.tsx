@@ -16,7 +16,6 @@ export default function Main() {
         education: [
             {
                 degree: "Computer Science",
-                focal: "Data Science",
                 year: date.getFullYear() - 2022,
             },
         ],
@@ -26,8 +25,8 @@ export default function Main() {
     return (
         <>
             <ScrollTransition title="a">
-                <section id="about" className="grid grid-cols-2 h-auto py-20">
-                    <div className="col-span-1">
+                <section id="about" className="grid grid-rows-2 md:grid-cols-2 md:grid-rows-1 py-20">
+                    <div className="col-span-1 flex justify-center items-center md:block">
                         <img
                             className="w-3/5 m-4 border rounded-2xl border-[#051C2C] shadow-md transition-transform duration-300 ease-in-out hover:scale-105"
                             src="/assets/me.jpg"
@@ -35,10 +34,10 @@ export default function Main() {
                         />
                     </div>
                     <div className="col-span-1 flex flex-col justify-center items-start px-4">
-                        <h1 className="text-[#051C2C] text-5xl text-start p-2 tracking-[0.8em] font-bold">
+                        <h1 className="text-[#051C2C] md:text-5xl text-xl text-center md:text-start p-2 tracking-[0.8em] font-bold">
                             DYLAN SWARTS
                         </h1>
-                        <h2 className="text-[#051C2C] text-2xl text-center p-4 tracking-widest italic font-bold">
+                        <h2 className="text-[#051C2C] text-2xl md:text-5xl text-center p-4 tracking-widest italic font-bold">
                             // Computer Science Major
                         </h2>
                     </div>
@@ -46,8 +45,8 @@ export default function Main() {
             </ScrollTransition>
             <ScrollTransition title="b"> 
                 <div className="grid justify-center text-[] items-center border rounded-2xl bg-[#8ca9bc]">
-                    <h2 className="text-4xl p-2 underline">{`"myStats":`}</h2>
-                    <pre className="whitespace-pre-wrap text-2xl">
+                    <h2 className="text-xl md:text-4xl p-2 underline">{`"myStats":`}</h2>
+                    <pre className="whitespace-pre-wrap text-sm md:text-2xl">
                         {JSON.stringify(myStats, null, 2)}
                     </pre>
                 </div>

@@ -21,7 +21,7 @@ export default function ScrollTransition(props: ScrollTransitionProps) {
         if (sectionRef.current) {
             const windowHeight = window.innerHeight;
             const elementTop = sectionRef.current.getBoundingClientRect().top;
-            const elementVisible = 150;
+            const elementVisible = 80;
 
             // decide on visibility
             const vis = elementTop < windowHeight - elementVisible;

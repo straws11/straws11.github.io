@@ -126,7 +126,7 @@ export default function GitHubContent() {
 
     return (
         <section id="projects">
-            <h2 className="text-[#051C2C] text-4xl text-center underline font-bold">
+            <h2 className="text-[#051C2C] text-xl md:text-4xl md:pt-16 text-center underline font-bold">
                 MY PROJECTS
             </h2>
             <div className="flex justify-center">
