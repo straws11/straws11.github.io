@@ -130,9 +130,13 @@ export default function GitHubContent() {
                 MY PROJECTS
             </h2>
             <div className="flex justify-center">
-                <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-x-2 mx-auto">
-                    {githubCards}
-                </div>
+                {githubCards.length > 0 ?
+                    <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-x-2 mx-auto">
+                        `{githubCards}`
+                    </div>
+                    :
+                    <h2 className="text-md md:text-2xl md:pt-12 text-center p-20 justify-center italic">Section Under Construction...</h2>
+                }
             </div>
         </section>
     );
