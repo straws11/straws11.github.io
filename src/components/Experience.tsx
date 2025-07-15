@@ -24,16 +24,16 @@ export default function Experience() {
                     key={index}
                     className="bg-slate-800 p-6 rounded-2xl shadow-md border border-slate-700 hover:shadow-xl transition-all"
                 >
-                    <h3 className="text-lg font-bold text-cyan-400">{exp.title}</h3>
-                    <p className="text-sm text-slate-300 font-semibold mb-1">{exp.place}</p>
-                    <p className="text-xs text-slate-400 italic mb-2">{exp.timeframe}</p>
-                    <p className="text-sm text-slate-200">{exp.description}</p>
+                    <h3 className="text-2xl font-bold text-cyan-400">{exp.title}</h3>
+                    <p className="text-xl text-slate-300 font-semibold mb-1">{exp.place}</p>
+                    <p className="text-lg text-slate-400 italic mb-2">{exp.timeframe}</p>
+                    <p className="text-xl text-slate-200">{exp.description}</p>
 
                     <ul className="mt-4 space-y-2">
                         {exp.achievements.map((achievement, idx) => (
                             <li
                                 key={idx}
-                                className="flex items-center gap-2 text-sm text-slate-100"
+                                className="flex items-center gap-2 text-lg text-slate-100"
                             >
                                 <FontAwesomeIcon
                                     icon={faCircleCheck}

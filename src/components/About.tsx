@@ -22,39 +22,39 @@ export default function About() {
 
     return (
         <>
-            <section
-                id="about"
-                className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-20 px-6 bg-slate-900 text-slate-100"
-            >
+            {/* HERO SECTION */}
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center py-20 px-6 bg-slate-900 text-slate-100 gap-y-10 md:gap-x-8">
                 {/* IMAGE */}
                 <div className="flex justify-center md:justify-end">
                     <img
-                        className="w-3/5 border rounded-2xl border-slate-700 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
                         src="/assets/me.jpg"
                         alt="Dylan Swarts"
+                        className="w-40 sm:w-1/2 md:w-4/5 max-w-xs border border-slate-700 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
                     />
                 </div>
 
                 {/* TEXT */}
-                <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
-                    <h1 className="text-3xl md:text-5xl tracking-[0.8em] font-bold text-cyan-400">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4 px-2">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-[0.25em] text-cyan-400 break-words">
                         DYLAN SWARTS
                     </h1>
-                    <h2 className="text-xl md:text-3xl tracking-widest italic font-semibold text-slate-300">
-      // Computer Science Major
+                    <h2 className="text-lg sm:text-2xl md:text-3xl italic tracking-wide text-slate-300">
+          // Computer Science Major
                     </h2>
                 </div>
-            </section>
+            </div>
 
             {/* STATS */}
-            <section className="max-w-4xl mx-auto mt-10 px-6">
-                <div className="bg-slate-800 rounded-2xl shadow-lg p-6 border border-slate-700">
-                    <h2 className="text-2xl md:text-4xl text-cyan-400 font-bold underline mb-4">{`"myStats":`}</h2>
-                    <pre className="whitespace-pre-wrap text-sm md:text-xl text-slate-200 font-mono">
+            <div className="max-w-4xl mx-auto mt-12 px-6">
+                <div className="bg-slate-800 border border-slate-700 rounded-2xl shadow-lg p-6 overflow-x-auto">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-400 underline mb-4">
+                        "myStats":
+                    </h2>
+                    <pre className="text-sm sm:text-base md:text-lg text-slate-200 font-mono whitespace-pre-wrap leading-relaxed">
                         {JSON.stringify(myStats, null, 2)}
                     </pre>
                 </div>
-            </section>
+            </div>
         </>
     );
 }

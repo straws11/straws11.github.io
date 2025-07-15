@@ -4,7 +4,7 @@
 
 @layer components {
     .section-heading {
-        @apply text-xl md:text-4xl text-center text-[#051C2C] underline pt-10 md:pt-16 font-bold;
+        @apply text-xl md:text-4xl text-center text-[#051C2C] underline font-bold;
     }
 }
 

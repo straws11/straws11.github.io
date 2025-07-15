@@ -20,39 +20,39 @@ function GitHubCard(props: GitHubCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             href={url}
-            className="block transition-transform duration-300 ease-in-out hover:scale-105"
+            className="block transition-transform duration-300 ease-in-out hover:scale-105 w-full"
         >
-            <div className="bg-slate-800 rounded-3xl shadow-lg p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border border-slate-700 hover:border-cyan-500 transition-all">
-                {/* Text Block */}
-                <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h3 className="font-bold tracking-wide bg-slate-700 text-cyan-300 rounded-xl px-3 py-1 inline-block text-base sm:text-lg">
+            <div className="bg-[#8ca9bc] rounded-3xl shadow-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full overflow-hidden">
+                {/* Text block */}
+                <div className="flex-1 min-w-0 break-words">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                        <h3 className="font-bold tracking-wider bg-[#3F708F] text-white rounded-xl px-3 py-1 inline-block text-base sm:text-lg">
                             {name}
                         </h3>
                         {forked && (
-                            <span className="text-xs bg-slate-600 text-slate-100 px-2 py-0.5 rounded-full font-semibold">
+                            <span className="text-xs bg-[#3F708F] text-white px-2 py-0.5 rounded-full font-semibold">
                                 Forked
                             </span>
                         )}
                     </div>
 
-                    <p className="italic text-sm sm:text-base mb-2 text-slate-300 line-clamp-3">
+                    <p className="italic text-sm sm:text-base mb-2 line-clamp-3 break-words">
                         {description}
                     </p>
 
-                    <div className="flex justify-between text-xs sm:text-sm text-slate-400 mt-4">
+                    <div className="flex justify-between text-xs sm:text-sm text-black/80 mt-4 flex-wrap gap-2">
                         <p>
-                            Main Language: <span className="font-medium text-slate-100">{language}</span>
+                            Main Language: <span className="font-medium">{language}</span>
                         </p>
                         <p className="text-right">Updated: {formattedDate}</p>
                     </div>
                 </div>
 
-                {/* Icon Block */}
+                {/* Icon block */}
                 <div className="self-center sm:self-start shrink-0">
                     <FontAwesomeIcon
                         icon={faGithub}
-                        className="text-3xl sm:text-4xl lg:text-5xl text-cyan-400"
+                        className="text-4xl sm:text-5xl text-black"
                     />
                 </div>
             </div>
@@ -101,7 +101,7 @@ export default function GitHubContent() {
     return (
         <div className="bg-slate-900 text-slate-100 w-full px-4 sm:px-6 lg:px-8 py-6">
             {githubCards.length > 0 ? (
-                <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 2xl:grid-cols-3">
+                <div className="grid w-full max-w-6xl mx-auto grid-cols-1 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
                     {githubCards}
                 </div>
             ) : (

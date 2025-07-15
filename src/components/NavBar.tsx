@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
 export default function NavBar() {
     return (
         <nav className="bg-[#051C2C] p-4 fixed w-full top-0 z-50">

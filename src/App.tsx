@@ -6,9 +6,7 @@ function App() {
     return (
         <>
             <div className="app bg-[#50606b]">
-                <NavBar />
                 <CVPage />
-                <Links />
                 <footer className="bg-gray-900 text-white text-sm text-center py-4">
                     Copyright &copy; {new Date().getFullYear()} Dylan Swarts
                 </footer>
