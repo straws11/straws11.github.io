@@ -12,18 +12,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TechCard from "./TechInfo";
 import { useState, useRef, useEffect } from "react";
 
-const skills: { [key: number]: { skill: string; icon: IconDefinition } } = {
-    1: { skill: "Python", icon: faPython },
-    2: { skill: "Java", icon: faJava },
-    3: { skill: "TypeScript/JavaScript", icon: faJs },
-    4: { skill: "Git Version Control", icon: faGitAlt },
-    5: { skill: "GitHub", icon: faGithub },
-    6: { skill: "Terminal", icon: faTerminal },
-    7: { skill: "Rust", icon: faRust },
-};
-// TODO combine skills and skillsBody, no reason to keep separated
-const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
+const skills: { [key: number]: { skill: string; icon: IconDefinition; text: JSX.Element; exp: Date } } = {
     1: {
+        skill: "Python",
+        icon: faPython,
         text: (
             <p className="text-md md:text-2xl">
                 Used matplotlib and pandas during a Data Science Hackathon in
@@ -35,6 +27,8 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
         exp: new Date(2022, 12),
     },
     2: {
+        skill: "Java",
+        icon: faJava,
         text: (
             <p className="text-md md:text-2xl">
                 Built a simple Android application for timing and generating
@@ -46,6 +40,8 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
         exp: new Date(2022, 10),
     },
     3: {
+        skill: "TypeScript",
+        icon: faJs,
         text: (
             <p className="text-md md:text-2xl">
                 Built this personal website using TypeScript, React and
@@ -63,6 +59,8 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
         exp: new Date(2023, 12),
     },
     4: {
+        skill: "Git Version Control",
+        icon: faGitAlt,
         text: (
             <p className="text-md md:text-2xl">
                 Utilize Git for all university and personal projects.
@@ -71,6 +69,8 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
         exp: new Date(2022, 10),
     },
     5: {
+        skill: "GitHub",
+        icon: faGithub,
         text: (
             <p className="text-md md:text-2xl">
                 Hosting all{" "}
@@ -86,6 +86,8 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
         exp: new Date(2022, 10),
     },
     6: {
+        skill: "Terminal",
+        icon: faTerminal,
         text: (
             <p className="text-md md:text-2xl">
                 Comfortable using terminal to manage files, install
@@ -95,6 +97,8 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
         exp: new Date(2023, 6),
     },
     7: {
+        skill: "Rust",
+        icon: faRust,
         text: (
             <p className="text-md md:text-2xl">
                 Learning a lot about websockets, endpoints and postgres using
@@ -113,16 +117,13 @@ const skillsBody: { [key: number]: { text: JSX.Element; exp: Date } } = {
 
 export default function TechSkills() {
     const [skillInfo, setSkillInfo] = useState<JSX.Element>(<></>);
-
     const targetRef = useRef<HTMLDivElement>(null);
     const [shouldScroll, setShouldScroll] = useState<Boolean>(false);
 
     useEffect(() => {
         if (shouldScroll && targetRef.current) {
             const scrollCoord = targetRef.current.getBoundingClientRect().top + window.scrollY;
-            // targetRef.current.scrollIntoView();
-            window.scrollTo({ top: scrollCoord - 80, behavior: "smooth"});
-            // targetRef.current.scrollBy({top: scrollTo - 20, behavior: "smooth"});
+            window.scrollTo({ top: scrollCoord - 80, behavior: "smooth" });
             setShouldScroll(false);
         }
     }, [shouldScroll]);
@@ -131,61 +132,47 @@ export default function TechSkills() {
         setSkillInfo(
             <TechCard
                 ref={targetRef}
-                experienceTime={formatExperienceTime(skillsBody[id].exp)}
+                experienceTime={formatExperienceTime(skills[id].exp)}
                 techName={skills[id].skill}
-                body={skillsBody[id].text}
+                body={skills[id].text}
             />
         );
         setShouldScroll(true);
     }
 
-    // create text format for experience time
     function formatExperienceTime(startDate: Date) {
         const difference = Date.now() - startDate.getTime();
         const yearDiff = 31_556_952_000;
-        if (difference < yearDiff) {
-            return "less than 1 year";
-        } else if (difference < 2 * yearDiff) {
-            return "more than 1 year";
-        } else {
-            return "more than " + Math.round(difference / yearDiff) + " years";
-        }
+        if (difference < yearDiff) return "less than 1 year";
+        else if (difference < 2 * yearDiff) return "more than 1 year";
+        else return "more than " + Math.round(difference / yearDiff) + " years";
     }
 
-    // create each clickable technology icon
     const components = Object.entries(skills).map(([id, obj]) => {
         const { skill, icon } = obj;
         return (
-            <div key={id} className="flex items-center gap-4 justify-center border-[#051C2C]">
-                <button onClick={() => clickSkill(Number(id))}>
-                    <FontAwesomeIcon icon={icon} size="3x" />
-                    <p>{skill}</p>
+            <div key={id} className="flex justify-center">
+                <button
+                    onClick={() => clickSkill(Number(id))}
+                    className="flex flex-col items-center p-4 rounded-2xl bg-slate-800 text-slate-100 border border-slate-700 shadow-md hover:shadow-lg hover:scale-105 transition-all w-full max-w-[180px]"
+                >
+                    <FontAwesomeIcon icon={icon} className="text-3xl sm:text-4xl lg:text-5xl text-cyan-400 mb-2" />
+                    <p className="text-sm sm:text-base text-center font-medium">{skill}</p>
                 </button>
             </div>
         );
     });
 
-    // split into two columns
-    const totalSkills = components.length;
-    /*const skillCols = (
-        <>
-            <div className="space-y-6">
-                {components.slice(0, totalSkills / 2 + 1)}
-            </div>
-            <div className="space-y-6">
-                {components.slice(totalSkills / 2 + 1)}
-            </div>
-        </>
-    );*/
-
     return (
         <>
-            <h6 className="text-xl md:text-4xl text-center text-[#051C2C] underline pt-10 md:pt-16 font-bold">
-                SKILLS AND TECHNOLOGIES
+            <h6 className="text-2xl md:text-4xl text-cyan-400 font-bold text-center my-8 underline tracking-wider">
+                SKILLS & TECHNOLOGIES
             </h6>
-            <div className="grid grid-cols-2 text-sm sm:text-lg lg:text-4xl lg:grid-cols-3 m-4 gap-2 space-y-6">
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                 {components}
             </div>
+
             {skillInfo}
         </>
     );

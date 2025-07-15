@@ -1,4 +1,4 @@
-import Intro from "./Main";
+import Intro from "./About";
 import Links from "./Links";
 import ScrollTransition from "./ScrollTransition";
 

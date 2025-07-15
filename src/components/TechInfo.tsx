@@ -1,21 +1,29 @@
 import React from "react";
+
 interface TechCardProps {
     techName: string;
     experienceTime: string;
     body: JSX.Element;
 }
 
-// export default function TechCard(props: TechCardProps) {
-const TechCard = React.forwardRef(function TechCard(props: TechCardProps, ref: React.Ref<HTMLDivElement>) {
-    // a single card for information on a skill
+const TechCard = React.forwardRef(function TechCard(
+    props: TechCardProps,
+    ref: React.Ref<HTMLDivElement>
+) {
     return (
-        <div ref={ref} className="border border-[#051C2C] rounded-lg shadow-lg bg-[#3F708F] p-2 m-8">
-            <p className="text-xl lg:text-4xl bg-[#8ca9bc] rounded-md p-2 w-fit">
+        <div
+            ref={ref}
+            className="border border-slate-700 bg-slate-800 text-slate-100 rounded-2xl shadow-xl p-6 mt-10 max-w-4xl mx-auto"
+        >
+            <p className="text-cyan-400 font-bold text-2xl md:text-4xl mb-2 underline decoration-dotted">
                 {props.techName}
             </p>
-            <p className="text-lg lg:text-2xl italic">{`Experience: ${props.experienceTime}`}</p>
-            {props.body}
+            <p className="text-slate-400 italic text-sm md:text-lg mb-4">
+                Experience: {props.experienceTime}
+            </p>
+            <div className="text-slate-100">{props.body}</div>
         </div>
     );
 });
+
 export default TechCard;
