@@ -6,20 +6,24 @@ const educations = [
         title: "BSc Computer Science & Applied Mathematics",
         place: "Stellenbosch University",
         timeframe: "2023 - 2025",
-        description: "Studied very hard in very many modules. Swag place",
+        description: "Undergraduate degree with exposure to modules in pure mathematics, applied mathematics, statistics, data science and computer science.",
         achievements: [
-            "Top 5% in the faculty of science in 2023",
-            "Current aggregate of 76%",
+            "Top 15% in the Faculty of Science in 2023",
+            "First year aggregate of 81.75%",
+            "Second year aggregate of 77.63%",
+            "Multiple top 10 placements for Computer Science modules"
         ],
     },
     {
         title: "High School",
         place: "Strand High School",
         timeframe: "2018 - 2022",
-        description: "high school go brr",
+        description: "",
         achievements: [
-            "Mathematics Olympiad",
-            "Second place for final results with 87.7%",
+            "UCT Mathematics Olympiad Merit: 2018, 2019, 2022",
+            "SAMF Boland Mathematics Team: 2018, 2019",
+            "Second place at school, graduating with 87.8%",
+            "Distinctions in all 7 subjects",
         ],
     },
 ] as const;
@@ -27,7 +31,7 @@ const educations = [
 export default function Education() {
 
     return (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 grid-cols-3">
             {educations.map((eduItem, index) => (
                 <div
                     key={index}

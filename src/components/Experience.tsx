@@ -4,21 +4,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const experiences = [
     {
         title: "Student Vacation Worker",
-        place: "Gendac",
+        place: "Gendac | Software, Innovations & IoT",
         timeframe: "July 2025 (2 weeks)",
         description: "Collaborated with two other interns to create a unique skills marketplace site.",
         achievements: [
             "Used C#, .NET and Blazor Web Server",
-            "Learn the day-to-day of a developer at Gendac",
+            "Experienced the day-to-day of a developer at Gendac",
             "Participated in daily standups",
             "Improved communication and teamwork skills",
+            "Drank a lot of coffee"
+        ],
+    },
+    {
+        title: "Programming Tutor",
+        place: "Self-Employed",
+        timeframe: "April 2023 - Present",
+        description: "Providing 1-on-1 tutoring sessions to high school and university students to develop and sharpen their skills in programming and building foundations in computer science concepts.",
+        achievements: [
+            "Improving communication skills",
+            "Thinking about fundamental programming concepts in unique ways",
+            "Breaking down fundamentals to a digestable level",
         ],
     },
 ] as const;
 
 export default function Experience() {
     return (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
             {experiences.map((exp, index) => (
                 <div
                     key={index}

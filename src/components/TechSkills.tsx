@@ -14,6 +14,44 @@ import { useState, useRef, useEffect } from "react";
 
 const skills: { [key: number]: { skill: string; icon: IconDefinition; text: JSX.Element; exp: Date } } = {
     1: {
+        skill: "Rust",
+        icon: faRust,
+        text: (
+            <p className="text-md md:text-2xl">
+                Learning a lot about websockets, endpoints and postgres using
+                Rust as backend language for{" "}
+                <a
+                    className="text-slate-200 underline hover:text-cyan-400"
+                    href="https://github.com/JBLDKY/starblazers"
+                >
+                    Starblazers!
+                </a>{" "}
+                Using Actix Web and sqlx for a major private project, with a
+                clean API used by the TS frontend.
+            </p>
+        ),
+        exp: new Date(2024, 5),
+    },
+    2: {
+        skill: "TypeScript",
+        icon: faJs,
+        text: (
+            <p className="text-md md:text-2xl">
+                Built this personal website using TypeScript, React and
+                TailwindCSS, as well as this{" "}
+                <a
+                    className="text-slate-200 underline hover:text-cyan-400"
+                    href="https://straws11.github.io/word-search"
+                >
+                    word search game.
+                </a>{" "}
+                Proficiency assessment API consumer project using React.
+                Large private project frontend with React and TailwindCSS.
+            </p>
+        ),
+        exp: new Date(2023, 12),
+    },
+    7: {
         skill: "Python",
         icon: faPython,
         text: (
@@ -26,44 +64,25 @@ const skills: { [key: number]: { skill: string; icon: IconDefinition; text: JSX.
         ),
         exp: new Date(2022, 12),
     },
-    2: {
+    3: {
+        skill: "Git",
+        icon: faGitAlt,
+        text: (
+            <p className="text-md md:text-2xl">
+                Utilize Git for all university and personal projects. Familiar with branching and best practices.
+            </p>
+        ),
+        exp: new Date(2022, 10),
+    },
+    4: {
         skill: "Java",
         icon: faJava,
         text: (
             <p className="text-md md:text-2xl">
                 Built a simple Android application for timing and generating
-                statistics for a niche speedcubing event. Experience with Java
-                Socket Programming in a simple Multiplayer Space Invaders Game
-                (WIP).
-            </p>
-        ),
-        exp: new Date(2022, 10),
-    },
-    3: {
-        skill: "TypeScript",
-        icon: faJs,
-        text: (
-            <p className="text-md md:text-2xl">
-                Built this personal website using TypeScript, React and
-                TailwindCSS, as well as this{" "}
-                <a
-                    className="text-[#8ca9bc] hover:text-[#082C37]"
-                    href="https://straws11.github.io/word-search"
-                >
-                    word search game.
-                </a>{" "}
-                Also utilized AWS Lambda for secure API requests to GitHub to
-                extract repository information.
-            </p>
-        ),
-        exp: new Date(2023, 12),
-    },
-    4: {
-        skill: "Git Version Control",
-        icon: faGitAlt,
-        text: (
-            <p className="text-md md:text-2xl">
-                Utilize Git for all university and personal projects.
+                statistics for a niche speedcubing event. Built several group mini-projects
+                (all scoring +90%) for a computer networking course using Java sockets. Springboot
+                experience as an initial backend stack.
             </p>
         ),
         exp: new Date(2022, 10),
@@ -75,12 +94,13 @@ const skills: { [key: number]: { skill: string; icon: IconDefinition; text: JSX.
             <p className="text-md md:text-2xl">
                 Hosting all{" "}
                 <a
-                    className="text-[#8ca9bc] hover:text-[#082C37]"
+                    className="text-slate-200 underline hover:text-cyan-400"
                     href="#projects"
                 >
                     personal projects
                 </a>{" "}
                 on GitHub, as well as this site deployed on GitHub Pages.
+                Experience working with branches and PRs.
             </p>
         ),
         exp: new Date(2022, 10),
@@ -90,28 +110,12 @@ const skills: { [key: number]: { skill: string; icon: IconDefinition; text: JSX.
         icon: faTerminal,
         text: (
             <p className="text-md md:text-2xl">
-                Comfortable using terminal to manage files, install
-                applications, interact with git. Use Tmux and NeoVim daily.
+                Extremely comfortable using unix terminal to manage files, install
+                applications, interact with git and other tooling. Use Tmux and NeoVim daily.
+                Optimized workflow to the point where most work is done in the terminal.
             </p>
         ),
         exp: new Date(2023, 6),
-    },
-    7: {
-        skill: "Rust",
-        icon: faRust,
-        text: (
-            <p className="text-md md:text-2xl">
-                Learning a lot about websockets, endpoints and postgres using
-                Rust as backend language for{" "}
-                <a
-                    className="text-[#8ca9bc] hover:text-[#082C37]"
-                    href="https://github.com/JBLDKY/starblazers"
-                >
-                    Starblazers!
-                </a>
-            </p>
-        ),
-        exp: new Date(2024, 5),
     },
 };
 
@@ -151,13 +155,21 @@ export default function TechSkills() {
     const components = Object.entries(skills).map(([id, obj]) => {
         const { skill, icon } = obj;
         return (
-            <div key={id} className="flex justify-center">
+            <div key={id}>
                 <button
                     onClick={() => clickSkill(Number(id))}
-                    className="flex flex-col items-center p-4 rounded-2xl bg-slate-800 text-slate-100 border border-slate-700 shadow-md hover:shadow-lg hover:scale-105 transition-all w-full max-w-[180px]"
+                    className="flex flex-col items-center justify-center gap-2 
+               bg-slate-800 text-slate-100 border border-slate-700 shadow-md 
+               hover:shadow-lg hover:scale-105 transition-all 
+               w-[140px] h-[140px] rounded-2xl text-center"
                 >
-                    <FontAwesomeIcon icon={icon} className="text-3xl sm:text-4xl lg:text-5xl text-cyan-400 mb-2" />
-                    <p className="text-sm sm:text-base text-center font-medium">{skill}</p>
+                    <FontAwesomeIcon
+                        icon={icon}
+                        className="text-3xl sm:text-4xl text-cyan-400"
+                    />
+                    <p className="text-sm sm:text-base font-medium truncate w-full">
+                        {skill}
+                    </p>
                 </button>
             </div>
         );

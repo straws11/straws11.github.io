@@ -3,21 +3,21 @@ import "../home.css";
 
 export default function About() {
     const date = new Date();
-    const myBday = new Date(2003, 10, 11);
+    const myBday = new Date(2003, 11, 11);
     const msPerYear = 31557600000; // 1000 * 60 * 60 * 24 * 365.25
     const [age, setAge] = useState(Math.floor((date.getTime() - myBday.getTime()) / msPerYear));
 
     // for fun display
     const myStats = {
-        age: age,
         location: "South Africa",
         education: [
             {
-                degree: "Computer Science",
+                degree: "BSc Computer Science & Applied Mathematics",
                 year: date.getFullYear() - 2022,
             },
         ],
-        hobbies: ["speedcubing", "coding"],
+        hobbies: ["coding", "speedcubing", "hiking"],
+        age: age,
     };
 
     return (
@@ -27,9 +27,9 @@ export default function About() {
                 {/* IMAGE */}
                 <div className="flex justify-center md:justify-end">
                     <img
-                        src="/assets/me.jpg"
+                        src="/assets/me2-cropped.jpeg"
                         alt="Dylan Swarts"
-                        className="w-40 sm:w-1/2 md:w-4/5 max-w-xs border border-slate-700 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
+                        className="w-sm:w-1/2 md:w-4/5 max-w-xs border border-slate-700 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
                     />
                 </div>
 
@@ -39,7 +39,7 @@ export default function About() {
                         DYLAN SWARTS
                     </h1>
                     <h2 className="text-lg sm:text-2xl md:text-3xl italic tracking-wide text-slate-300">
-          // Computer Science Major
+          // Software Engineering
                     </h2>
                 </div>
             </div>

@@ -101,12 +101,12 @@ export default function GitHubContent() {
     return (
         <div className="bg-slate-900 text-slate-100 w-full px-4 sm:px-6 lg:px-8 py-6">
             {githubCards.length > 0 ? (
-                <div className="grid w-full max-w-6xl mx-auto grid-cols-1 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
+                <div className="grid w-full max-w-6xl mx-auto grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6">
                     {githubCards}
                 </div>
             ) : (
                 <h2 className="text-md md:text-2xl text-center p-20 italic text-slate-400">
-                    Section Under Construction...
+                    Loading...
                 </h2>
             )}
         </div>
