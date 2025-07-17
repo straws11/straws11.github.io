@@ -31,22 +31,22 @@ const educations = [
 export default function Education() {
 
     return (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
             {educations.map((eduItem, index) => (
                 <div
                     key={index}
                     className="bg-slate-800 p-6 rounded-2xl shadow-md border border-slate-700 hover:shadow-xl transition-all"
                 >
-                    <h3 className="text-2xl font-bold text-cyan-400">{eduItem.title}</h3>
-                    <p className="text-xl text-slate-300 font-semibold mb-1">{eduItem.place}</p>
-                    <p className="text-lg text-slate-400 italic mb-2">{eduItem.timeframe}</p>
-                    <p className="text-xl text-slate-200">{eduItem.description}</p>
+                    <h3 className="text-lg sm:text-2xl font-bold text-cyan-400">{eduItem.title}</h3>
+                    <p className="text-md sm:text-xl text-slate-300 font-semibold mb-1">{eduItem.place}</p>
+                    <p className="text-sm sm:text-lg text-slate-400 italic mb-2">{eduItem.timeframe}</p>
+                    <p className="text-md sm:text-xl text-slate-200">{eduItem.description}</p>
 
                     <ul className="mt-4 space-y-2">
                         {eduItem.achievements.map((achievement, idx) => (
                             <li
                                 key={idx}
-                                className="flex items-center gap-2 text-lg text-slate-100"
+                                className="flex items-center gap-2 text-sm sm:text-lg text-slate-100"
                             >
                                 <FontAwesomeIcon
                                     icon={faCircleCheck}

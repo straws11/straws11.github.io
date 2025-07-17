@@ -152,16 +152,15 @@ export default function TechSkills() {
         else return "more than " + Math.round(difference / yearDiff) + " years";
     }
 
+    // actual buttons with icon & name
     const components = Object.entries(skills).map(([id, obj]) => {
         const { skill, icon } = obj;
         return (
-            <div key={id}>
+            <div className="w-[70%]"
+                key={id}>
                 <button
                     onClick={() => clickSkill(Number(id))}
-                    className="flex flex-col items-center justify-center gap-2 
-               bg-slate-800 text-slate-100 border border-slate-700 shadow-md 
-               hover:shadow-lg hover:scale-105 transition-all 
-               w-[140px] h-[140px] rounded-2xl text-center"
+                    className="flex flex-col items-center justify-center gap-2 bg-slate-800 text-slate-100 border border-slate-700 shadow-md hover:shadow-lg hover:scale-105 transition-all h-[140px] w-full rounded-2xl text-center"
                 >
                     <FontAwesomeIcon
                         icon={icon}
@@ -181,7 +180,7 @@ export default function TechSkills() {
                 SKILLS & TECHNOLOGIES
             </h6>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+            <div className="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                 {components}
             </div>
 

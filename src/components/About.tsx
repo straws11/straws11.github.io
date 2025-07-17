@@ -25,11 +25,11 @@ export default function About() {
             {/* HERO SECTION */}
             <div className="grid grid-cols-1 md:grid-cols-2 items-center py-20 px-6 bg-slate-900 text-slate-100 gap-y-10 md:gap-x-8">
                 {/* IMAGE */}
-                <div className="flex justify-center md:justify-end">
+                <div className="flex justify-center">
                     <img
                         src="/assets/me2-cropped.jpeg"
                         alt="Dylan Swarts"
-                        className="w-sm:w-1/2 md:w-4/5 max-w-xs border border-slate-700 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
+                        className="w-full max-w-xs border border-slate-700 rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105"
                     />
                 </div>
 
