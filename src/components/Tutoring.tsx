@@ -13,21 +13,21 @@ export default function Tutoring() {
 
             <section className="mb-10">
                 <h3 className="text-lg sm:text-2xl font-bold text-cyan-400 mb-2">Who I Help</h3>
-                <ul className="space-y-2 text-md sm:text-xl text-slate-200 max-w-prose">
+                <ul className="space-y-4 text-md sm:text-xl text-slate-200 max-w-prose">
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
-                        <span>International CS students needing support with coursework, exams, and projects.</span>
+                        <span>International CS students needing support with coursework, exams, and projects</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
-                        <span>Anyone who wants to learn or advance their skills in programming.</span>
+                        <span>Anyone who wants to learn or advance their skills in programming</span>
                     </li>
                 </ul>
             </section>
 
             <section className="mb-10">
                 <h3 className="text-lg sm:text-2xl font-bold text-cyan-400 mb-3">What I Teach</h3>
-                <ul className="space-y-2 text-md sm:text-xl text-slate-200 max-w-prose">
+                <ul className="space-y-4 text-md sm:text-xl text-slate-200 max-w-prose">
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
                         <span>Beginner-friendly lessons in Python, JavaScript, Java, and C</span>
@@ -53,28 +53,28 @@ export default function Tutoring() {
 
             <section className="mb-10">
                 <h3 className="text-lg sm:text-2xl font-bold text-cyan-400 mb-2">How It Works</h3>
-                <ul className="space-y-2 text-md sm:text-xl text-slate-200 max-w-prose">
+                <ul className="space-y-4 text-md sm:text-xl text-slate-200 max-w-prose">
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
-                        <span>Sessions are conducted via Google Meet or Discord with live coding and screensharing.</span>
+                        <span>Sessions are conducted via Google Meet or Discord with live coding and screensharing</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
-                        <span>Flexible scheduling and pay-as-you-go options.</span>
+                        <span>Flexible scheduling and pay-as-you-go options</span>
                     </li>
                 </ul>
             </section>
 
             <section className="mb-10">
                 <h3 className="text-lg sm:text-2xl font-bold text-cyan-400 mb-2">Pricing</h3>
-                <ul className="space-y-2 text-md sm:text-xl text-slate-200 max-w-prose">
+                <ul className="space-y-4 text-md sm:text-xl text-slate-200 max-w-prose">
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
-                        <span>Starting at $20 USD per hour.</span>
+                        <span>Starting at $20 USD per hour</span>
                     </li>
                     <li className="flex items-start gap-2">
                         <FontAwesomeIcon icon={faChevronRight} className="text-cyan-400 mt-1" />
-                        <span>Free 20-minute introductory session available.</span>
+                        <span>Free 1 hour introductory session available</span>
                     </li>
                 </ul>
             </section>
