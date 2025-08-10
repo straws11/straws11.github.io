@@ -9,8 +9,7 @@ const experiences = [
         description: "Collaborated with two other interns to create a unique skills marketplace site.",
         achievements: [
             "Used C#, .NET and Blazor Web Server",
-            "Experienced the day-to-day of a developer at Gendac",
-            "Participated in daily standups",
+            "Experienced the day-to-day of a developer at Gendac", "Participated in daily standups",
             "Improved communication and teamwork skills",
             "Drank a lot of coffee"
         ],

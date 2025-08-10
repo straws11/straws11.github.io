@@ -47,9 +47,9 @@ function GitHubCard(props: GitHubCardProps) {
     }
 
     return (
-        <div className="bg-[#8ca9bc] rounded-3xl shadow-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full overflow-hidden">
+        <div className="bg-[#8ca9bc] rounded-3xl shadow-lg p-4 flex flex-col sm:flex-row justify-between items-stretch gap-4 w-full overflow-hidden">
             {/* Text block */}
-            <div className="flex-1 min-w-0 break-words">
+            <div className="flex-1 min-w-0 break-words flex flex-col justify-between">
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <h3 className="font-bold tracking-wider bg-[#3F708F] text-white rounded-xl px-3 py-1 inline-block text-base sm:text-lg">
                         {name}

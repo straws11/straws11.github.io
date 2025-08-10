@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { faCode, faProjectDiagram, faBriefcase, faGraduationCap, faInfo, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faProjectDiagram, faBriefcase, faGraduationCap, faInfo, faLink, faChalkboardTeacher } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TechSkills from "./TechSkills";
 import GitHubContent from "./GitHubContent";
@@ -8,6 +8,7 @@ import Experience from "./Experience";
 import Education from "./Education";
 import About from "./About";
 import Links from "./Links";
+import Tutoring from "./Tutoring";
 
 const tabs = [
     { id: "About", icon: faInfo },
@@ -15,6 +16,7 @@ const tabs = [
     { id: "Projects", icon: faProjectDiagram },
     { id: "Experience", icon: faBriefcase },
     { id: "Skills", icon: faCode },
+    { id: "Tutoring", icon: faChalkboardTeacher },
     { id: "Links", icon: faLink },
 
 ] as const;
@@ -40,7 +42,7 @@ export default function CVPage() {
         return () => window.removeEventListener("keydown", handleKey);
     });
 
-    const renderTabContent = () => {
+    function renderTabContent() {
         switch (activeTab) {
             case "About": return <About />;
             case "Skills": return <TechSkills />;
@@ -48,8 +50,9 @@ export default function CVPage() {
             case "Experience": return <Experience />;
             case "Education": return <Education />;
             case "Links": return <Links />;
+            case "Tutoring": return <Tutoring />;
         }
-    };
+    }
 
     return (
         <>
