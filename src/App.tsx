@@ -1,5 +1,3 @@
-import NavBar from "./components/NavBar";
-import Links from "./components/Links";
 import CVPage from "./components/CVPage";
 
 function App() {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { faCode, faProjectDiagram, faBriefcase, faGraduationCap, faInfo, faLink, faChalkboardTeacher } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faProjectDiagram, faBriefcase, faGraduationCap, faInfo, faLink, faChalkboardTeacher, faRandom } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TechSkills from "./TechSkills";
 import GitHubContent from "./GitHubContent";
@@ -9,6 +9,7 @@ import Education from "./Education";
 import About from "./About";
 import Links from "./Links";
 import Tutoring from "./Tutoring";
+import Misc from "./Misc";
 
 const tabs = [
     { id: "About", icon: faInfo },
@@ -18,7 +19,7 @@ const tabs = [
     { id: "Skills", icon: faCode },
     { id: "Tutoring", icon: faChalkboardTeacher },
     { id: "Links", icon: faLink },
-
+    { id: "Miscellaneous", icon: faRandom },
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];
@@ -51,6 +52,7 @@ export default function CVPage() {
             case "Education": return <Education />;
             case "Links": return <Links />;
             case "Tutoring": return <Tutoring />;
+            case "Miscellaneous": return <Misc />
         }
     }
 
