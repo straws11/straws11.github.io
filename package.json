@@ -26,6 +26,7 @@
     "react-scripts": "5.0.1",
     "remark-gfm": "^4.0.1",
     "typescript": "^4.9.5",
+    "uuid4": "^2.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -55,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@types/uuid4": "^2.0.3",
     "gh-pages": "^6.1.0",
     "tailwindcss": "^3.4.0"
   }
